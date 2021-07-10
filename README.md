@@ -9,7 +9,7 @@ csound-sdl provides a simple interface for (currently quite) low level SDL calls
 
 
 ## Building
-Create a build directory at the top of the source tree, execute *cmake ..*, *make* and optionally *make install* as root. If the latter is not used/possible then the resulting libsdl.so can be used with the *--opcode-lib* flag in Csound. eg:
+Create a build directory at the top of the source tree, execute *cmake ..*, *make* and optionally *make install* as root. If the latter is not used/possible then the resulting module can be used with the *--opcode-lib* flag in Csound. eg:
 	
 	cd csound-sdl
 	mkdir build && cd build
@@ -20,7 +20,9 @@ Create a build directory at the top of the source tree, execute *cmake ..*, *mak
 ## Opcode overview
 ### sdlinit
 *ihandle, kmousetrigger, kmousex, kmousey sdlinit Swindowname, iwidth, iheight, ifps*
+
 Initialise the SDL window.
+
  - ihandle: the handle to be used by further SDL opcodes to write to that window
  - kmousetrigger: fires when mouse button is clicked in the window
  - kmousex: reports mouse X position in window, normalised from 0 to 1
@@ -33,7 +35,9 @@ Initialise the SDL window.
 
 ### sdlcolour
 *ihandle sdlcolour kred, kgreen, kblue, kalpha*
+
 Set a colour to be used in later drawing.
+
  - ihandle: the handle for the colour to be used by further SDL opcodes
  
  - kred: red amount with range 0 to 255
@@ -43,7 +47,9 @@ Set a colour to be used in later drawing.
 
 ### sdlrect
 *sdlrect iwindow, icolour, kx, ky, kwidth, kheight*
+
 Create a rectangle.
+
  - iwindow: the window handle from sdlinit
  - icolour: the colour handle from sdlcolour
  - kx: X position
@@ -53,10 +59,13 @@ Create a rectangle.
 
 ## sdlline
 *sdlline iwindow, icolour, kx1, ky1, kx2, ky2*
+
 Create a line.
+
  - iwindow: the window handle from sdlinit
  - icolour: the colour handle from sdlcolour
  - kx1: X position of start point
  - ky1: Y position of start point
  - kx2: X position of end point
  - ky2: Y position of end point
+
