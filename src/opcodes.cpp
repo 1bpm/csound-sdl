@@ -103,17 +103,17 @@ struct sdlinit : csnd::Plugin<4, 4> {
         sdl->screen_height = ySize;
         
         if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-            throw std::runtime_error(csound->strdup(SDL_GetError()));
+            throw std::runtime_error(csound->strdup((char*) SDL_GetError()));
         }
         SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
         sdl->window = SDL_CreateWindow(windowName, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, xSize, ySize, SDL_WINDOW_SHOWN );
         if (sdl->window == NULL) {
-            throw std::runtime_error(csound->strdup(SDL_GetError()));
+            throw std::runtime_error(csound->strdup((char*) SDL_GetError()));
         }
         
         sdl->renderer = SDL_CreateRenderer(sdl->window, -1, SDL_RENDERER_ACCELERATED);
         if (sdl->renderer == NULL) {
-            throw std::runtime_error(csound->strdup(SDL_GetError()));
+            throw std::runtime_error(csound->strdup((char*) SDL_GetError()));
         }
         sdl->initialised = true;
     }
