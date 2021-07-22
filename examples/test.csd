@@ -1,7 +1,6 @@
 <CsoundSynthesizer>
 <CsOptions>
 -odac
---opcode-lib=/home/bargepole/bpcheckout/csound-dev/sdltest/sdllib.so
 </CsOptions>
 <CsInstruments>
 sr = 44100
@@ -9,6 +8,11 @@ kr = 4410
 nchnls = 2
 0dbfs = 1
 seed 0
+/*
+    SDL example 1
+    Oscillator triggering a rectangle, a moving line and mouse input
+*/
+
 
 gisdl init -1
 gicol init -1
