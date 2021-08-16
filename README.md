@@ -4,7 +4,7 @@ csound-sdl provides a simple interface for (currently quite) low level SDL calls
 
 ## Requirements
  - Csound libraries
- - Cmake
+ - Cmake >= 2.8.12
  - LibSDL2
 
 
